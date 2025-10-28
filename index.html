@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Cyberpunk - Comandos GitHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="container">
+        <!-- Menu Lateral -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-text">GITHUB</span>
+                    <span class="logo-cursor">></span>
+                </div>
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-palette"></i>
+                </div>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar comandos...">
+                <button class="search-clear" id="searchClear">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="quick-stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalCommands">27</span>
+                    <span class="stat-label">Comandos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="visitedSections">0</span>
+                    <span class="stat-label">Seções</span>
+                </div>
+            </div>
+            
+            <ul class="menu" id="menu">
+                <li class="menu-item active" data-section="intro">
+                    <a href="#intro">
+                        <i class="fas fa-rocket"></i>
+                        <span>Introdução</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="config">
+                    <a href="#config">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuração</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="repos">
+                    <a href="#repos">
+                        <i class="fas fa-folder"></i>
+                        <span>Repositórios</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="changes">
+                    <a href="#changes">
+                        <i class="fas fa-edit"></i>
+                        <span>Alterações</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="branches">
+                    <a href="#branches">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Branches</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="remote">
+                    <a href="#remote">
+                        <i class="fas fa-cloud"></i>
+                        <span>Repositórios Remotos</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="undo">
+                    <a href="#undo">
+                        <i class="fas fa-undo"></i>
+                        <span>Desfazendo Alterações</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="workflow">
+                    <a href="#workflow">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Fluxo de Trabalho</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="advanced">
+                    <a href="#advanced">
+                        <i class="fas fa-star"></i>
+                        <span>Comandos Avançados</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-section="conflicts">
+                    <a href="#conflicts">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Conflitos</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <button class="btn-scroll-top" id="scrollTop">
+                    <i class="fas fa-arrow-up"></i>
+                    Topo
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <div class="header">
+                <div class="header-content">
+                    <h1 id="mainTitle">GUIA CYBERPUNK - COMANDOS GITHUB</h1>
+                    <p>Domine o Git e GitHub com este guia completo e futurista</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="readingProgress"></div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="toggleDarkMode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn btn-primary" id="exportGuide">
+                        <i class="fas fa-download"></i>
+                        Exportar
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Seção Introdução -->
+            <section class="section" id="intro" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-rocket"></i> Introdução ao Git e GitHub</h2>
+                    <button class="btn-section-copy" data-section="intro">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <p>Git é um sistema de controle de versão distribuído que permite rastrear mudanças no código fonte durante o desenvolvimento de software. GitHub é uma plataforma de hospedagem de código que utiliza o Git.</p>
+                
+                <div class="tip">
+                    <strong>DICA PRO:</strong> Este guia assume que você já tem o Git instalado em seu computador. Se não tiver, baixe em <a href="https://git-scm.com/" target="_blank">git-scm.com</a>.
+                </div>
+                
+                <div class="cyber-line"></div>
+                
+                <h3><i class="fas fa-terminal"></i> Por que usar Git?</h3>
+                <p>O Git permite que você:</p>
+                <ul class="cyber-list">
+                    <li><i class="fas fa-check"></i> Controle o histórico de versões do seu código</li>
+                    <li><i class="fas fa-check"></i> Trabalhe em equipe de forma eficiente</li>
+                    <li><i class="fas fa-check"></i> Experimente novas ideias sem risco</li>
+                    <li><i class="fas fa-check"></i> Recupere versões anteriores facilmente</li>
+                </ul>
+                
+                <div class="interactive-demo">
+                    <h4><i class="fas fa-play-circle"></i> Demonstração Interativa</h4>
+                    <div class="demo-container">
+                        <div class="terminal" id="demoTerminal">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="terminal-btn red"></span>
+                                    <span class="terminal-btn yellow"></span>
+                                    <span class="terminal-btn green"></span>
+                                </div>
+                                <span class="terminal-title">git-demo</span>
+                            </div>
+                            <div class="terminal-content" id="terminalContent">
+                                <div class="terminal-line">$ <span class="typing-text" id="typingText"></span><span class="cursor">|</span></div>
+                            </div>
+                        </div>
+                        <div class="demo-controls">
+                            <button class="btn btn-small" id="demoPrev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <span class="demo-step">1/5</span>
+                            <button class="btn btn-small" id="demoNext">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="btn btn-small" id="demoRestart">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Configuração -->
+            <section class="section" id="config" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-cog"></i> Configuração Inicial</h2>
+                    <button class="btn-section-copy" data-section="config">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-user"></i> 1. Configurar usuário e email</h3>
+                    <div class="command" data-command='git config --global user.name "Seu Nome"'>
+                        git config --global user.name "Seu Nome"
+                        <button class="btn-copy" data-copy='git config --global user.name "Seu Nome"'>
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Define o nome de usuário globalmente para todos os repositórios.</div>
+                    
+                    <div class="command" data-command='git config --global user.email "seu@email.com"'>
+                        git config --global user.email "seu@email.com"
+                        <button class="btn-copy" data-copy='git config --global user.email "seu@email.com"'>
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Define o email do usuário globalmente.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-list"></i> 2. Verificar configurações</h3>
+                    <div class="command" data-command="git config --list">
+                        git config --list
+                        <button class="btn-copy" data-copy="git config --list">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Lista todas as configurações do Git.</div>
+                </div>
+            </section>
+
+            <!-- Seção Repositórios -->
+            <section class="section" id="repos" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-folder"></i> Criando e Clonando Repositórios</h2>
+                    <button class="btn-section-copy" data-section="repos">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-play"></i> 1. Inicializar um repositório local</h3>
+                    <div class="command" data-command="git init">
+                        git init
+                        <button class="btn-copy" data-copy="git init">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Cria um novo repositório Git no diretório atual.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-download"></i> 2. Clonar um repositório existente</h3>
+                    <div class="command" data-command="git clone https://github.com/usuario/repositorio.git">
+                        git clone https://github.com/usuario/repositorio.git
+                        <button class="btn-copy" data-copy="git clone https://github.com/usuario/repositorio.git">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Baixa um repositório remoto para o seu computador.</div>
+                    
+                    <div class="command" data-command="git clone https://github.com/usuario/repositorio.git nome-da-pasta">
+                        git clone https://github.com/usuario/repositorio.git nome-da-pasta
+                        <button class="btn-copy" data-copy="git clone https://github.com/usuario/repositorio.git nome-da-pasta">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Clona o repositório em uma pasta com nome específico.</div>
+                </div>
+            </section>
+
+            <!-- Seção Alterações -->
+            <section class="section" id="changes" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-edit"></i> Trabalhando com Alterações</h2>
+                    <button class="btn-section-copy" data-section="changes">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-info-circle"></i> 1. Verificar status do repositório</h3>
+                    <div class="command" data-command="git status">
+                        git status
+                        <button class="btn-copy" data-copy="git status">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra o estado atual do diretório de trabalho e da área de staging.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-plus"></i> 2. Adicionar arquivos para commit</h3>
+                    <div class="command" data-command="git add nome-do-arquivo">
+                        git add nome-do-arquivo
+                        <button class="btn-copy" data-copy="git add nome-do-arquivo">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Adiciona um arquivo específico à área de staging.</div>
+                    
+                    <div class="command" data-command="git add .">
+                        git add .
+                        <button class="btn-copy" data-copy="git add .">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Adiciona todos os arquivos modificados e novos à área de staging.</div>
+                    
+                    <div class="command" data-command="git add -A">
+                        git add -A
+                        <button class="btn-copy" data-copy="git add -A">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Adiciona todos os arquivos (modificados, novos e deletados) à área de staging.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-save"></i> 3. Fazer commit das alterações</h3>
+                    <div class="command" data-command='git commit -m "Mensagem descritiva do commit"'>
+                        git commit -m "Mensagem descritiva do commit"
+                        <button class="btn-copy" data-copy='git commit -m "Mensagem descritiva do commit"'>
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Registra as alterações no repositório com uma mensagem.</div>
+                    
+                    <div class="command" data-command='git commit -a -m "Mensagem descritiva"'>
+                        git commit -a -m "Mensagem descritiva"
+                        <button class="btn-copy" data-copy='git commit -a -m "Mensagem descritiva"'>
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Adiciona automaticamente todos os arquivos rastreados e faz commit.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-history"></i> 4. Ver histórico de commits</h3>
+                    <div class="command" data-command="git log">
+                        git log
+                        <button class="btn-copy" data-copy="git log">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra o histórico de commits.</div>
+                    
+                    <div class="command" data-command="git log --oneline">
+                        git log --oneline
+                        <button class="btn-copy" data-copy="git log --oneline">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra o histórico de commits de forma resumida.</div>
+                    
+                    <div class="command" data-command="git log --graph --oneline">
+                        git log --graph --oneline
+                        <button class="btn-copy" data-copy="git log --graph --oneline">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra o histórico com gráfico de branches.</div>
+                </div>
+            </section>
+
+            <!-- Seção Branches -->
+            <section class="section" id="branches" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-code-branch"></i> Trabalhando com Branches</h2>
+                    <button class="btn-section-copy" data-section="branches">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-list"></i> 1. Listar branches</h3>
+                    <div class="command" data-command="git branch">
+                        git branch
+                        <button class="btn-copy" data-copy="git branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Lista todas as branches locais.</div>
+                    
+                    <div class="command" data-command="git branch -a">
+                        git branch -a
+                        <button class="btn-copy" data-copy="git branch -a">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Lista todas as branches (locais e remotas).</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-plus-circle"></i> 2. Criar uma nova branch</h3>
+                    <div class="command" data-command="git branch nome-da-branch">
+                        git branch nome-da-branch
+                        <button class="btn-copy" data-copy="git branch nome-da-branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Cria uma nova branch.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-exchange-alt"></i> 3. Trocar de branch</h3>
+                    <div class="command" data-command="git checkout nome-da-branch">
+                        git checkout nome-da-branch
+                        <button class="btn-copy" data-copy="git checkout nome-da-branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Muda para a branch especificada.</div>
+                    
+                    <div class="command" data-command="git checkout -b nome-da-branch">
+                        git checkout -b nome-da-branch
+                        <button class="btn-copy" data-copy="git checkout -b nome-da-branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Cria uma nova branch e muda para ela.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-code-merge"></i> 4. Mesclar branches</h3>
+                    <div class="command" data-command="git merge nome-da-branch">
+                        git merge nome-da-branch
+                        <button class="btn-copy" data-copy="git merge nome-da-branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mescla a branch especificada na branch atual.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-trash"></i> 5. Deletar branch</h3>
+                    <div class="command" data-command="git branch -d nome-da-branch">
+                        git branch -d nome-da-branch
+                        <button class="btn-copy" data-copy="git branch -d nome-da-branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Deleta a branch local especificada.</div>
+                </div>
+            </section>
+
+            <!-- Seção Repositórios Remotos -->
+            <section class="section" id="remote" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-cloud"></i> Trabalhando com Repositórios Remotos</h2>
+                    <button class="btn-section-copy" data-section="remote">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-plus"></i> 1. Adicionar repositório remoto</h3>
+                    <div class="command" data-command="git remote add origin https://github.com/usuario/repositorio.git">
+                        git remote add origin https://github.com/usuario/repositorio.git
+                        <button class="btn-copy" data-copy="git remote add origin https://github.com/usuario/repositorio.git">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Adiciona um repositório remoto com o nome "origin".</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-eye"></i> 2. Ver repositórios remotos</h3>
+                    <div class="command" data-command="git remote -v">
+                        git remote -v
+                        <button class="btn-copy" data-copy="git remote -v">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Lista todos os repositórios remotos configurados.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-download"></i> 3. Baixar alterações do repositório remoto</h3>
+                    <div class="command" data-command="git fetch origin">
+                        git fetch origin
+                        <button class="btn-copy" data-copy="git fetch origin">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Baixa as alterações do repositório remoto, mas não as mescla.</div>
+                    
+                    <div class="command" data-command="git pull origin main">
+                        git pull origin main
+                        <button class="btn-copy" data-copy="git pull origin main">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Baixa as alterações da branch main e as mescla na branch atual.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-upload"></i> 4. Enviar alterações para o repositório remoto</h3>
+                    <div class="command" data-command="git push origin main">
+                        git push origin main
+                        <button class="btn-copy" data-copy="git push origin main">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Envia os commits locais da branch main para o repositório remoto.</div>
+                    
+                    <div class="command" data-command="git push -u origin nome-da-branch">
+                        git push -u origin nome-da-branch
+                        <button class="btn-copy" data-copy="git push -u origin nome-da-branch">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Envia uma branch local para o repositório remoto e configura o tracking.</div>
+                </div>
+            </section>
+
+            <!-- Seção Desfazendo Alterações -->
+            <section class="section" id="undo" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-undo"></i> Desfazendo Alterações</h2>
+                    <button class="btn-section-copy" data-section="undo">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-eraser"></i> 1. Desfazer alterações em arquivos não commitados</h3>
+                    <div class="command" data-command="git checkout -- nome-do-arquivo">
+                        git checkout -- nome-do-arquivo
+                        <button class="btn-copy" data-copy="git checkout -- nome-do-arquivo">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Descarta alterações locais em um arquivo específico.</div>
+                    
+                    <div class="command" data-command="git restore nome-do-arquivo">
+                        git restore nome-do-arquivo
+                        <button class="btn-copy" data-copy="git restore nome-do-arquivo">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Versão mais recente do comando para descartar alterações.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-minus-circle"></i> 2. Remover arquivos da área de staging</h3>
+                    <div class="command" data-command="git reset HEAD nome-do-arquivo">
+                        git reset HEAD nome-do-arquivo
+                        <button class="btn-copy" data-copy="git reset HEAD nome-do-arquivo">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Remove um arquivo da área de staging, mantendo as alterações no diretório de trabalho.</div>
+                    
+                    <div class="command" data-command="git restore --staged nome-do-arquivo">
+                        git restore --staged nome-do-arquivo
+                        <button class="btn-copy" data-copy="git restore --staged nome-do-arquivo">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Versão mais recente do comando para remover da staging.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-edit"></i> 3. Alterar o último commit</h3>
+                    <div class="command" data-command='git commit --amend -m "Nova mensagem"'>
+                        git commit --amend -m "Nova mensagem"
+                        <button class="btn-copy" data-copy='git commit --amend -m "Nova mensagem"'>
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Altera a mensagem do último commit.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-history"></i> 4. Reverter um commit</h3>
+                    <div class="command" data-command="git revert hash-do-commit">
+                        git revert hash-do-commit
+                        <button class="btn-copy" data-copy="git revert hash-do-commit">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Cria um novo commit que desfaz as alterações de um commit específico.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-undo-alt"></i> 5. Resetar para um commit anterior</h3>
+                    <div class="command" data-command="git reset --soft hash-do-commit">
+                        git reset --soft hash-do-commit
+                        <button class="btn-copy" data-copy="git reset --soft hash-do-commit">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Move HEAD para um commit anterior, mantendo as alterações na área de staging.</div>
+                    
+                    <div class="command" data-command="git reset --hard hash-do-commit">
+                        git reset --hard hash-do-commit
+                        <button class="btn-copy" data-copy="git reset --hard hash-do-commit">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Move HEAD para um commit anterior e descarta todas as alterações posteriores.</div>
+                    
+                    <div class="note">
+                        <strong>Atenção:</strong> Use git reset --hard com cuidado, pois ele descarta permanentemente as alterações não commitadas.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Fluxo de Trabalho -->
+            <section class="section" id="workflow" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-sync-alt"></i> Fluxo de Trabalho Típico</h2>
+                    <button class="btn-section-copy" data-section="workflow">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="workflow">
+                    <h3>Fluxo Básico de Desenvolvimento</h3>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <strong>Atualizar seu repositório local</strong>
+                            <div class="command" data-command="git pull origin main">
+                                git pull origin main
+                                <button class="btn-copy" data-copy="git pull origin main">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <strong>Criar uma nova branch para sua funcionalidade</strong>
+                            <div class="command" data-command="git checkout -b minha-nova-funcionalidade">
+                                git checkout -b minha-nova-funcionalidade
+                                <button class="btn-copy" data-copy="git checkout -b minha-nova-funcionalidade">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <strong>Fazer suas alterações e commits</strong>
+                            <div class="command" data-command="git add .">
+                                git add .
+                                <button class="btn-copy" data-copy="git add .">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="command" data-command='git commit -m "Implementa nova funcionalidade"'>
+                                git commit -m "Implementa nova funcionalidade"
+                                <button class="btn-copy" data-copy='git commit -m "Implementa nova funcionalidade"'>
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <strong>Enviar a branch para o repositório remoto</strong>
+                            <div class="command" data-command="git push -u origin minha-nova-funcionalidade">
+                                git push -u origin minha-nova-funcionalidade
+                                <button class="btn-copy" data-copy="git push -u origin minha-nova-funcionalidade">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div>
+                            <strong>Criar um Pull Request no GitHub</strong>
+                            <p>Vá para o repositório no GitHub e crie um Pull Request para mesclar sua branch com a main.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">6</div>
+                        <div>
+                            <strong>Após aprovação, mesclar e atualizar local</strong>
+                            <div class="command" data-command="git checkout main">
+                                git checkout main
+                                <button class="btn-copy" data-copy="git checkout main">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="command" data-command="git pull origin main">
+                                git pull origin main
+                                <button class="btn-copy" data-copy="git pull origin main">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="command" data-command="git branch -d minha-nova-funcionalidade">
+                                git branch -d minha-nova-funcionalidade
+                                <button class="btn-copy" data-copy="git branch -d minha-nova-funcionalidade">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Comandos Avançados -->
+            <section class="section" id="advanced" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Comandos Avançados</h2>
+                    <button class="btn-section-copy" data-section="advanced">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-box"></i> 1. Stash (guardar alterações temporariamente)</h3>
+                    <div class="command" data-command="git stash">
+                        git stash
+                        <button class="btn-copy" data-copy="git stash">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Guarda as alterações não commitadas temporariamente.</div>
+                    
+                    <div class="command" data-command="git stash list">
+                        git stash list
+                        <button class="btn-copy" data-copy="git stash list">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Lista todos os stashes.</div>
+                    
+                    <div class="command" data-command="git stash apply">
+                        git stash apply
+                        <button class="btn-copy" data-copy="git stash apply">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Aplica o stash mais recente.</div>
+                    
+                    <div class="command" data-command="git stash pop">
+                        git stash pop
+                        <button class="btn-copy" data-copy="git stash pop">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Aplica o stash mais recente e o remove da lista.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-tag"></i> 2. Tags</h3>
+                    <div class="command" data-command="git tag nome-da-tag">
+                        git tag nome-da-tag
+                        <button class="btn-copy" data-copy="git tag nome-da-tag">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Cria uma tag no commit atual.</div>
+                    
+                    <div class="command" data-command='git tag -a v1.0 -m "Versão 1.0"'>
+                        git tag -a v1.0 -m "Versão 1.0"
+                        <button class="btn-copy" data-copy='git tag -a v1.0 -m "Versão 1.0"'>
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Cria uma tag anotada.</div>
+                    
+                    <div class="command" data-command="git push origin --tags">
+                        git push origin --tags
+                        <button class="btn-copy" data-copy="git push origin --tags">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Envia todas as tags para o repositório remoto.</div>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-code-compare"></i> 3. Diferenças entre commits</h3>
+                    <div class="command" data-command="git diff">
+                        git diff
+                        <button class="btn-copy" data-copy="git diff">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra as diferenças entre o diretório de trabalho e a área de staging.</div>
+                    
+                    <div class="command" data-command="git diff --staged">
+                        git diff --staged
+                        <button class="btn-copy" data-copy="git diff --staged">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra as diferenças entre a área de staging e o último commit.</div>
+                    
+                    <div class="command" data-command="git diff hash1 hash2">
+                        git diff hash1 hash2
+                        <button class="btn-copy" data-copy="git diff hash1 hash2">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Mostra as diferenças entre dois commits específicos.</div>
+                </div>
+            </section>
+
+            <!-- Seção Conflitos -->
+            <section class="section" id="conflicts" data-visited="false">
+                <div class="section-header">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Resolução de Conflitos</h2>
+                    <button class="btn-section-copy" data-section="conflicts">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-search"></i> 1. Identificar conflitos</h3>
+                    <p>Quando ocorre um conflito durante um merge ou rebase, o Git marcará os arquivos com conflitos.</p>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-code"></i> 2. Resolver conflitos manualmente</h3>
+                    <p>Abra os arquivos com conflitos e procure por marcadores como:</p>
+                    <div class="command">
+                        &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
+                        Seu código local<br>
+                        =======<br>
+                        Código do repositório remoto<br>
+                        &gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-remota
+                    </div>
+                    <p>Edite o arquivo para resolver o conflito, removendo os marcadores e mantendo o código desejado.</p>
+                </div>
+                
+                <div class="step">
+                    <h3><i class="fas fa-check-circle"></i> 3. Finalizar a resolução</h3>
+                    <div class="command" data-command="git add nome-do-arquivo">
+                        git add nome-do-arquivo
+                        <button class="btn-copy" data-copy="git add nome-do-arquivo">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Adiciona o arquivo com conflito resolvido.</div>
+                    
+                    <div class="command" data-command="git commit">
+                        git commit
+                        <button class="btn-copy" data-copy="git commit">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="explanation">Finaliza o merge após resolver todos os conflitos.</div>
+                </div>
+            </section>
+            
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Guia Cyberpunk - Comandos GitHub</h4>
+                        <p>Para mais informações, visite a <a href="https://docs.github.com/" target="_blank">documentação oficial do GitHub</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Recursos Úteis</h4>
+                        <ul>
+                            <li><a href="https://git-scm.com/doc" target="_blank">Documentação do Git</a></li>
+                            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                            <li><a href="https://training.github.com/" target="_blank">GitHub Training</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Estatísticas da Sessão</h4>
+                        <div class="session-stats">
+                            <div class="session-stat">
+                                <span class="stat-value" id="sessionTime">00:00</span>
+                                <span class="stat-label">Tempo</span>
+                            </div>
+                            <div class="session-stat">
+                                <span class="stat-value" id="commandsCopied">0</span>
+                                <span class="stat-label">Comandos Copiados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cyber-line"></div>
+                <p class="footer-bottom">
+                    <i class="fas fa-code"></i> Desenvolvido com <i class="fas fa-heart" style="color: var(--accent-2);"></i> para a comunidade dev
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal de Exportação -->
+    <div class="modal" id="exportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Exportar Guia</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Escolha o formato para exportar o guia:</p>
+                <div class="export-options">
+                    <button class="export-option" data-format="pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDF</span>
+                    </button>
+                    <button class="export-option" data-format="txt">
+                        <i class="fas fa-file-text"></i>
+                        <span>Texto</span>
+                    </button>
+                    <button class="export-option" data-format="html">
+                        <i class="fas fa-code"></i>
+                        <span>HTML</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
