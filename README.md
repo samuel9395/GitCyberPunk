@@ -1,2 +1,2 @@
 # GitCyberPunk
-Guia básico de comando para o Github.
+Guia básico de comandos para o Github.
